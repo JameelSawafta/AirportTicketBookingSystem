@@ -24,13 +24,13 @@ public class Passenger
     
     public List<Booking> Bookings { get; set; }
 
-    public Passenger(string firstName, string lastName, string email, string phoneNum, List<Booking> bookings)
+    public Passenger(string firstName, string lastName, string email, string phoneNum)
     {
         PassengerId = new Guid();
         FirstName = firstName;
         LastName = lastName;
         Email = email;
         PhoneNum = phoneNum;
-        Bookings = bookings;
+        Bookings = new List<Booking> { };
     }
 }
