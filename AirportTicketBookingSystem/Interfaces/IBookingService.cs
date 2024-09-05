@@ -4,8 +4,8 @@ namespace AirportTicketBookingSystem.Interfaces;
 
 public interface IBookingService
 {
-    public void CreateBooking(FlightClass flightClass,Guid FlightId );
+    public void CreateBooking(Booking booking);
     public void DeleteBooking(Guid BookingId);
-    public void UpdateBooking(Guid BookingId);
+    public void UpdateBooking(Booking booking);
     public IEnumerable<Booking> GetAllBookings();
 }
