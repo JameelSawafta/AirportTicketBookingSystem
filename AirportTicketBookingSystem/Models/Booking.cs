@@ -21,7 +21,7 @@ public class Booking
 
     public Booking(Guid flightId, Guid passengerId, FlightClass flightClass, DateTime bookingDate)
     {
-        BookingId = new Guid();
+        BookingId = Guid.NewGuid();
         FlightId = flightId;
         PassengerId = passengerId;
         FlightClass = flightClass;

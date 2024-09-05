@@ -26,7 +26,7 @@ public class Passenger
 
     public Passenger(string firstName, string lastName, string email, string phoneNum)
     {
-        PassengerId = new Guid();
+        PassengerId = Guid.NewGuid();
         FirstName = firstName;
         LastName = lastName;
         Email = email;
