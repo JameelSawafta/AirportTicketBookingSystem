@@ -18,7 +18,7 @@ public class FlightService : IFlightService
         _flights.AddRange(flights);
     }
 
-    public IEnumerable<Flight> GetSearchFlights(FlightSieve flightSieve)
+    public IEnumerable<Flight> GetSearchFlights(Sieve flightSieve)
     {
         var query = _flights.AsQueryable();
         if (flightSieve.MaxPrice.HasValue)

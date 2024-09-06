@@ -5,5 +5,5 @@ namespace AirportTicketBookingSystem.Interfaces;
 
 public interface IBookingSearchService
 {
-    public IEnumerable<Booking> GetSearchBookings(BookingSieve bookingSieve);
+    public IEnumerable<Booking> GetSearchBookings(Sieve bookingSieve);
 }
