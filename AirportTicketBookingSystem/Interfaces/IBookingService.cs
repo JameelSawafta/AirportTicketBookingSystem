@@ -1,3 +1,4 @@
+using AirportTicketBookingSystem.Filters;
 using AirportTicketBookingSystem.Models;
 
 namespace AirportTicketBookingSystem.Interfaces;
@@ -8,4 +9,5 @@ public interface IBookingService
     public void DeleteBooking(Guid BookingId);
     public void UpdateBooking(Booking booking);
     public IEnumerable<Booking> GetAllBookings();
+    public IEnumerable<Booking> GetSearchBookings(BookingSieve bookingSieve);
 }
