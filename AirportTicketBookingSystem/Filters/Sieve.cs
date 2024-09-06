@@ -13,5 +13,5 @@ public class Sieve
     public string DestinationAirport { get; set; }
     public Guid? FlightId { get; set; }
     public Guid? PassengerId { get; set; }
-    public FlightClass FlightClass { get; set; }
+    public FlightClass? FlightClass { get; set; }
 }

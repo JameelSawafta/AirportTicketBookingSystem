@@ -54,18 +54,21 @@ public class FlightService : IFlightService
         {
             query = query.Where(b => b.DestinationAirport.Equals(flightSieve.DestinationAirport, StringComparison.OrdinalIgnoreCase));
         }
-        
-        if (flightSieve.FlightClass == FlightClass.Economy)
+
+        if (flightSieve.FlightClass.HasValue)
         {
-            query = query.Where(f => f.AvailableSeatsEconomy > 0);
-        }
-        else if (flightSieve.FlightClass == FlightClass.Business)
-        {
-            query = query.Where(f => f.AvailableSeatsBusiness > 0);
-        }
-        else if (flightSieve.FlightClass == FlightClass.FirstClass)
-        {
-            query = query.Where(f => f.AvailableSeatsFirstClass > 0);
+            if (flightSieve.FlightClass == FlightClass.Economy)
+            {
+                query = query.Where(f => f.AvailableSeatsEconomy > 0);
+            }
+            else if (flightSieve.FlightClass == FlightClass.Business)
+            {
+                query = query.Where(f => f.AvailableSeatsBusiness > 0);
+            }
+            else if (flightSieve.FlightClass == FlightClass.FirstClass)
+            {
+                query = query.Where(f => f.AvailableSeatsFirstClass > 0);
+            }
         }
         
         return query.ToList();
