@@ -18,6 +18,11 @@ public class FlightService : IFlightService
         _flights.AddRange(flights);
     }
 
+    public void ImportFlightsFromCsv(string filePath)
+    {
+        throw new NotImplementedException();
+    }
+
     public IEnumerable<Flight> GetSearchFlights(Sieve flightSieve)
     {
         var query = _flights.AsQueryable();
