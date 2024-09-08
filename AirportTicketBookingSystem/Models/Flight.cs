@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using AirportTicketBookingSystem.Validations;
 
 namespace AirportTicketBookingSystem.Models;
 
@@ -33,10 +34,12 @@ public class Flight
     
     [Required]
     [DataType(DataType.DateTime)]
+    [FutureDate]
     public DateTime DepartureDate { get; set; }
     
     [Required]
     [DataType(DataType.DateTime)]
+    [FutureDate]
     public DateTime ArrivalDate { get; set; }
     
     [Required]
