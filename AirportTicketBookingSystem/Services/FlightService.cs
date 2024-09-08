@@ -1,6 +1,7 @@
 using AirportTicketBookingSystem.Filters;
 using AirportTicketBookingSystem.Interfaces;
 using AirportTicketBookingSystem.Models;
+using AirportTicketBookingSystem.Utils;
 
 namespace AirportTicketBookingSystem.Services;
 
@@ -20,7 +21,11 @@ public class FlightService : IFlightService
 
     public void ImportFlightsFromCsv(string filePath)
     {
-        throw new NotImplementedException();
+        var fileHandler = new FileHandler();
+        var fileContent = fileHandler.ReadFile(filePath);
+        var csvParser = new CsvParser();
+        var flights = csvParser.ParseFlightsCsv(fileContent);
+        _flights.AddRange(flights);
     }
 
     public IEnumerable<Flight> GetSearchFlights(Sieve flightSieve)
