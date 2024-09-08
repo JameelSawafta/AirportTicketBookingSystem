@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using AirportTicketBookingSystem.Models;
 
 namespace AirportTicketBookingSystem.Utils;
@@ -37,7 +38,22 @@ public class CsvParser
                                 availableSeatsFirstClass: int.Parse(parts[13].Trim())
                             );
                             
-                            flights.Add(flight);
+                            var validationResults = new List<ValidationResult>();
+                            var validationContext = new ValidationContext(flight);
+                            bool isValid = Validator.TryValidateObject(flight, validationContext, validationResults, true);
+
+                            if (isValid)
+                            {
+                                flights.Add(flight);
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Validation errors for flight '{flight.FlightName}':");
+                                foreach (var validationResult in validationResults)
+                                {
+                                    Console.WriteLine($"- {validationResult.ErrorMessage}");
+                                }
+                            }
                         }
                         catch (Exception ex)
                         {
