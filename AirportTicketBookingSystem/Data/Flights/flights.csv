@@ -1,0 +1,21 @@
+FlightName,Airline,DepartureCountry,DestinationCountry,DepartureAirport,DestinationAirport,DepartureDate,ArrivalDate,EconomyPrice,BusinessPrice,FirstClassPrice,AvailableSeatsEconomy,AvailableSeatsBusiness,AvailableSeatsFirstClass
+Flight 101,Airline A,USA,UK,JFK,Heathrow,2024-09-10 09:30:00,2024-09-10 18:30:00,500,1500,3000,50,20,10
+Flight 102,Airline B,Canada,Germany,Toronto,Berlin,2024-09-15 10:00:00,2024-09-15 19:00:00,450,1400,2900,60,18,12
+Flight 103,Airline C,Australia,Japan,Sydney,Tokyo,2024-09-18 13:00:00,2024-09-18 21:00:00,600,1600,3100,55,25,15
+Flight 104,Airline D,UAE,France,Dubai,Paris,2024-09-20 16:00:00,2024-09-20 23:00:00,550,1550,3050,40,22,8
+Flight 105,Airline E,Brazil,Italy,Sao Paulo,Rome,2024-09-25 08:00:00,2024-09-25 17:00:00,480,1480,2980,65,17,9
+Flight 106,Airline A,USA,France,JFK,Paris,2024-09-12 11:00:00,2024-09-12 20:30:00,520,1520,3020,70,19,14
+Flight 107,Airline F,India,Russia,Mumbai,Moscow,2024-09-30 12:30:00,2024-09-30 20:30:00,520,1520,3020,70,19,14
+Flight 108,Airline G,China,South Africa,Beijing,Cape Town,2024-10-05 06:00:00,2024-10-05 16:00:00,570,1570,3070,48,16,6
+Flight 109,Airline H,Japan,Brazil,Osaka,Rio de Janeiro,2024-10-10 07:00:00,2024-10-10 20:00:00,590,1590,3090,53,23,11
+Flight 110,Airline I,France,India,Paris,Delhi,2024-10-15 14:30:00,2024-10-15 23:00:00,510,1510,3010,62,21,13
+Flight 111,Airline B,Canada,UK,Toronto,London,2024-09-22 08:45:00,2024-09-22 17:00:00,460,1420,2920,58,20,14
+Flight 112,Airline C,Australia,UK,Sydney,London,2024-10-02 10:30:00,2024-10-02 19:45:00,620,1620,3120,45,18,12
+Flight 113,Airline A,USA,UK,JFK,Heathrow,2024-09-12 14:30:00,2024-09-12 23:00:00,505,1505,3005,51,21,11
+Flight 114,Airline D,UAE,India,Dubai,Delhi,2024-10-10 09:00:00,2024-10-10 16:00:00,560,1560,3060,63,25,17
+Flight 115,Airline E,Brazil,Argentina,Sao Paulo,Buenos Aires,2024-10-08 12:30:00,2024-10-08 18:30:00,495,1495,2995,57,15,12
+Flight 116,Airline F,India,Germany,Mumbai,Berlin,2024-09-28 08:00:00,2024-09-28 15:30:00,530,1530,3030,61,22,13
+Flight 117,Airline A,USA,Canada,JFK,Toronto,2024-09-13 16:00:00,2024-09-13 19:00:00,470,1470,2970,55,20,15
+Flight 118,Airline G,China,Japan,Beijing,Tokyo,2024-10-15 07:30:00,2024-10-15 12:30:00,575,1575,3075,49,18,14
+Flight 119,Airline H,Japan,Australia,Osaka,Sydney,2024-10-18 09:00:00,2024-10-18 18:00:00,580,1580,3080,50,19,10
+Flight 120,Airline I,France,USA,Paris,JFK,2024-10-20 10:00:00,2024-10-20 18:00:00,625,1625,3125,52,20,16
