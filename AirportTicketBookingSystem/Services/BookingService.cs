@@ -14,9 +14,15 @@ public class BookingService : IBookingService
     }
 
     
-    public void CreateBooking(Booking booking)
+    public bool CreateBooking(Booking booking)
     {
-        _bookings.Add(booking);
+        var isValid = ValidationService.Validation(booking,b => _bookings.Add((Booking)b));
+        if (isValid)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void DeleteBooking(Guid BookingId)

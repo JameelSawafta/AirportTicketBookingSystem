@@ -18,6 +18,7 @@ public class FutureDateAttribute : ValidationAttribute
                 return ValidationResult.Success;
             }
         }
-        return new ValidationResult(ErrorMessage);
+        var errorMessage = string.Format(ErrorMessage, validationContext.DisplayName);
+        return new ValidationResult(errorMessage);
     }
 }

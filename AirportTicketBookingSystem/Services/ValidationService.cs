@@ -4,7 +4,7 @@ namespace AirportTicketBookingSystem.Services;
 
 public class ValidationService
 {
-    public static void Validation(object? validationObject,Action<object> func)
+    public static bool Validation(object? validationObject,Action<object> func)
     {
         var validationResults = new List<ValidationResult>();
         var validationContext = new ValidationContext(validationObject);
@@ -12,6 +12,7 @@ public class ValidationService
         if (isValid)
         {
             func(validationObject);
+            return true;
         }
         else
         {
@@ -20,6 +21,8 @@ public class ValidationService
             {
                 Console.WriteLine($"- {validationResult.ErrorMessage}");
             }
+
+            return false;
         }
     }
 }

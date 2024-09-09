@@ -20,7 +20,7 @@ public class PassengerService : IPassengerService
         
         if (passenger == null)
         {
-            Console.WriteLine("Invalid email or password."); 
+            Console.WriteLine("Invalid email or password.");
         }
         
         return passenger;
@@ -28,7 +28,11 @@ public class PassengerService : IPassengerService
 
     public Passenger CreatePassenger(Passenger passenger)
     {
-        ValidationService.Validation(passenger,x => _passengers.Add((Passenger)x));
-        return passenger;
+        var isValid = ValidationService.Validation(passenger,x => _passengers.Add((Passenger)x));
+        if (isValid)
+        {
+            return passenger;
+        }
+        return null;
     }
 }
