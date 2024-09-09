@@ -41,7 +41,7 @@ public class BookingService : IBookingService
         {
             _booking.FlightId = booking.FlightId;
             _booking.FlightClass = booking.FlightClass;
-            _booking.BookingDate = booking.BookingDate;
+            _booking.BookingDate = DateTime.Now;
         }
     }
 

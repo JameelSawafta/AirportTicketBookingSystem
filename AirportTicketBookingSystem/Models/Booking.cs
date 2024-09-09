@@ -20,13 +20,17 @@ public class Booking
     [Required]
     [FutureDate]
     public DateTime BookingDate { get; set; }
+    
+    [Required]
+    public decimal Price { get; set; }
 
-    public Booking(Guid flightId, Guid passengerId, FlightClass flightClass, DateTime bookingDate)
+    public Booking(Guid flightId, Guid passengerId, FlightClass flightClass, DateTime bookingDate, decimal price)
     {
         BookingId = Guid.NewGuid();
         FlightId = flightId;
         PassengerId = passengerId;
         FlightClass = flightClass;
         BookingDate = bookingDate;
+        Price = price;
     }
 }

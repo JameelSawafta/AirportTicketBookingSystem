@@ -34,9 +34,9 @@ public class FlightService : IFlightService
         if (flightSieve.MaxPrice.HasValue)
         {
             query = query.Where(f => 
-                (flightSieve.FlightClass == FlightClass.Economy && f.EconomyPrice <= flightSieve.MaxPrice) ||
-                (flightSieve.FlightClass == FlightClass.Business && f.BusinessPrice <= flightSieve.MaxPrice) ||
-                (flightSieve.FlightClass == FlightClass.FirstClass && f.FirstClassPrice <= flightSieve.MaxPrice));
+                (f.EconomyPrice <= flightSieve.MaxPrice) ||
+                (f.BusinessPrice <= flightSieve.MaxPrice) ||
+                (f.FirstClassPrice <= flightSieve.MaxPrice));
 
         }
 
