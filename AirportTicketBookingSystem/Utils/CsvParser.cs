@@ -18,7 +18,7 @@ public class CsvParser
                 {
                     var parts = line.Split(',');
 
-                    if (parts.Length >= 13)
+                    if (parts.Length >= 14)
                     {
                         try
                         {

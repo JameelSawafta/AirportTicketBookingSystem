@@ -8,9 +8,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<Flight> flights = new List<Flight>();
-        List<Booking> bookings = new List<Booking>();
-        List<Passenger> passengers = new List<Passenger>();
+        var flights = new List<Flight>();
+        var bookings = new List<Booking>();
+        var passengers = new List<Passenger>();
         var flightService = new FlightService(flights);
         var bookingService = new BookingService(bookings);
         var bookingSearchService = new BookingSearchService(flights,bookings);
