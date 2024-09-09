@@ -1,9 +1,24 @@
-﻿namespace AirportTicketBookingSystem;
+﻿using AirportTicketBookingSystem.Models;
+using AirportTicketBookingSystem.Services;
+using AirportTicketBookingSystem.Utils;
+
+namespace AirportTicketBookingSystem;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        List<Flight> flights = new List<Flight>();
+        List<Booking> bookings = new List<Booking>();
+        List<Passenger> passengers = new List<Passenger>();
+        var flightService = new FlightService(flights);
+        var bookingService = new BookingService(bookings);
+        var bookingSearchService = new BookingSearchService(flights,bookings);
+        var passengerService = new PassengerService(passengers);
+        
+        var menuHandler = new MenuHandler(bookingService, bookingSearchService, flightService,passengerService);
+        
+        menuHandler.MainMenu();
+        
     }
 }
