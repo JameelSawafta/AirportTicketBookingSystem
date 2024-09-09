@@ -40,4 +40,10 @@ public class PassengerService : IPassengerService
     {
         return _passengers;
     }
+
+    public void DeleteBooking(Guid PassengerId,Booking booking)
+    {
+        var passenger = _passengers.FirstOrDefault(p => p.PassengerId == PassengerId);
+        passenger.Bookings.Remove(booking);
+    }
 }
