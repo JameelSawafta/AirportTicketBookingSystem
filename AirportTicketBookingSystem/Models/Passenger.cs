@@ -28,6 +28,8 @@ public class Passenger
     
     public List<Booking> Bookings { get; set; }
 
+    public string FullName => $"{FirstName} {LastName}";
+
     public Passenger(string firstName, string lastName, string email, string phoneNum, string password)
     {
         PassengerId = Guid.NewGuid();

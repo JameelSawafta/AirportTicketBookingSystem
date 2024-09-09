@@ -12,7 +12,7 @@ public class PassengerService : IPassengerService
     {
         _passengers = passengers;
     }
-
+    
 
     public Passenger PassengerSignIn(string email, string password)
     {
@@ -34,5 +34,10 @@ public class PassengerService : IPassengerService
             return passenger;
         }
         return null;
+    }
+
+    public IEnumerable<Passenger> GetAllPassengers()
+    {
+        return _passengers;
     }
 }
