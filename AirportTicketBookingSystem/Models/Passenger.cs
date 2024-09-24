@@ -6,7 +6,7 @@ namespace AirportTicketBookingSystem.Models;
 public class Passenger
 {
     [Required]
-    public Guid PassengerId;
+    public Guid Id;
     
     [Required]
     public string FirstName { get; set; }
@@ -20,23 +20,23 @@ public class Passenger
     
     [Required]
     [Phone]
-    public string PhoneNum { get; set; }
+    public string PhoneNumber { get; set; }
     
     [Required]
     public string Password { get; set; }
     
-    
+    /// ??
     public List<Booking> Bookings { get; set; }
 
     public string FullName => $"{FirstName} {LastName}";
 
-    public Passenger(string firstName, string lastName, string email, string phoneNum, string password)
+    public Passenger(string firstName, string lastName, string email, string phoneNumber, string password)
     {
-        PassengerId = Guid.NewGuid();
+        Id = Guid.NewGuid();
         FirstName = firstName;
         LastName = lastName;
         Email = email;
-        PhoneNum = phoneNum;
+        PhoneNumber = phoneNumber;
         Password = password;
         Bookings = new List<Booking> { };
     }

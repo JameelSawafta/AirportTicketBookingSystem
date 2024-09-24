@@ -67,7 +67,21 @@ public class Flight
     public int AvailableSeatsFirstClass { get; set; }
 
 
-    public Flight(string flightName, string airline, string departureCountry, string destinationCountry, string departureAirport, string destinationAirport, DateTime departureDate, DateTime arrivalDate, decimal economyPrice, decimal businessPrice, decimal firstClassPrice, int availableSeatsEconomy, int availableSeatsBusiness, int availableSeatsFirstClass)
+    public Flight(
+        string flightName, 
+        string airline, 
+        string departureCountry, 
+        string destinationCountry, 
+        string departureAirport, 
+        string destinationAirport, 
+        DateTime departureDate, 
+        DateTime arrivalDate, 
+        decimal economyPrice, 
+        decimal businessPrice, 
+        decimal firstClassPrice, 
+        int availableSeatsEconomy, 
+        int availableSeatsBusiness, 
+        int availableSeatsFirstClass)
     {
         FlightId = Guid.NewGuid();
         FlightName = flightName;

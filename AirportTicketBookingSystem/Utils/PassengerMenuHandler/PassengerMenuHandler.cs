@@ -266,7 +266,7 @@ public class PassengerMenuHandler
         return;
     }
 
-    var booking = new Booking(flight.FlightId, passenger.PassengerId, flightClass, DateTime.Now, price);
+    var booking = new Booking(flight.FlightId, passenger.Id, flightClass, DateTime.Now, price);
     _bookingService.CreateBooking(booking);
     _passenger.Bookings.Add(booking);
 
@@ -368,7 +368,7 @@ public class PassengerMenuHandler
         return;
     }
 
-    _passengerService.DeleteBooking(passenger.PassengerId,bookingToCancel);
+    _passengerService.DeleteBooking(passenger.Id,bookingToCancel);
     _bookingService.DeleteBooking(bookingToCancel.BookingId);
     Console.WriteLine("Booking cancelled successfully.");
 

@@ -119,7 +119,7 @@ public class ManagerMenuHandler
 
             
             Console.WriteLine($"Booking ID: {booking.BookingId}");
-            Console.WriteLine($"Passenger Name: {_passengerService.GetAllPassengers().FirstOrDefault(p => p.PassengerId == booking.PassengerId).FullName}");
+            Console.WriteLine($"Passenger Name: {_passengerService.GetAllPassengers().FirstOrDefault(p => p.Id == booking.PassengerId).FullName}");
             Console.WriteLine($"Flight Name: {flight.FlightName}");
             Console.WriteLine($"Airline: {flight.Airline}");
             Console.WriteLine($"From: {flight.DepartureCountry} ({flight.DepartureAirport})");
@@ -156,7 +156,7 @@ public class ManagerMenuHandler
         foreach (var booking in allBookings)
         {
             Console.WriteLine($"Booking ID: {booking.BookingId}");
-            Console.WriteLine($"Passenger Name: {_passengerService.GetAllPassengers().FirstOrDefault(p => p.PassengerId == booking.PassengerId).FullName}");
+            Console.WriteLine($"Passenger Name: {_passengerService.GetAllPassengers().FirstOrDefault(p => p.Id == booking.PassengerId).FullName}");
             Console.WriteLine($"Flight Name: {_flightService.GetSearchFlights(new Sieve{}).FirstOrDefault(f => f.FlightId == booking.FlightId).FlightName}");
             Console.WriteLine($"Class: {booking.FlightClass}");
             Console.WriteLine($"Booking Date: {booking.BookingDate}");

@@ -23,8 +23,8 @@ public class BookingSearchService : IBookingSearchService
         if (sieve.MaxPrice.HasValue || !string.IsNullOrEmpty(sieve.DepartureCountry) || !string.IsNullOrEmpty(sieve.DestinationCountry) 
             || sieve.DepartureDate.HasValue || !string.IsNullOrEmpty(sieve.DepartureAirport) || !string.IsNullOrEmpty(sieve.DestinationAirport))
         {
-            var _flightService = new FlightService(_flights);
-            var matchingFlights = _flightService.GetSearchFlights(sieve);
+            var flightService = new FlightService(_flights);
+            var matchingFlights = flightService.GetSearchFlights(sieve);
             var matchingFlightIds = matchingFlights.Select(flight => flight.FlightId);
             query = query.Where(booking => matchingFlightIds.Contains(booking.FlightId));
         }

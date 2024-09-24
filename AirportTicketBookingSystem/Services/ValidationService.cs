@@ -2,10 +2,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AirportTicketBookingSystem.Services;
 
-public class ValidationService
+public static class ValidationService
 {
-    public static bool Validation(object? validationObject,Action<object> func)
+    public static bool Validation<T>(T? validationObject,Action<T> func)
     {
+        // i think we should split the validation from executing the func
         var validationResults = new List<ValidationResult>();
         var validationContext = new ValidationContext(validationObject);
         bool isValid = Validator.TryValidateObject(validationObject, validationContext, validationResults, true);

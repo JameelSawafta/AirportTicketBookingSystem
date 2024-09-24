@@ -16,32 +16,33 @@ public class BookingService : IBookingService
     
     public bool CreateBooking(Booking booking)
     {
-        var isValid = ValidationService.Validation(booking,b => _bookings.Add((Booking)b));
-        if (isValid)
-        {
-            return true;
-        }
-
-        return false;
+        // I think splitting the validation from adding the book will be better
+        
+        // 1. Check if it's valid object.
+        // 2. yes? add it , no ignore it and add a validation message.
+        var isValid = ValidationService.Validation(booking,b => _bookings.Add(b));
+        return isValid;
     }
 
-    public void DeleteBooking(Guid BookingId)
+    public void DeleteBooking(Guid bookingId)
     {
-        var _booking = _bookings.FirstOrDefault(b => b.BookingId == BookingId);
-        if (_booking != null)
+        var booking = _bookings.FirstOrDefault(b => b.BookingId == bookingId);
+        if (booking != null)
         {
-            _bookings.Remove(_booking);
+            _bookings.Remove(booking);
         }
     }
 
     public void UpdateBooking(Booking booking)
     {
-        var _booking = _bookings.FirstOrDefault(b => b.BookingId == booking.BookingId);
-        if (_booking != null)
+        var currentBooking = _bookings.FirstOrDefault(b => b.BookingId == booking.BookingId);
+        if (currentBooking != null)
         {
-            _booking.FlightId = booking.FlightId;
-            _booking.FlightClass = booking.FlightClass;
-            _booking.BookingDate = DateTime.Now;
+            currentBooking.FlightId = booking.FlightId;
+            currentBooking.FlightClass = booking.FlightClass;
+            currentBooking.BookingDate = DateTime.Now;
+            currentBooking.Price = booking.Price;
+            // the passenger may change the class, so the price may change
         }
     }
 

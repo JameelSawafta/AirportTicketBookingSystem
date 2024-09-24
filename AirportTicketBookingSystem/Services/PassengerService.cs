@@ -28,12 +28,8 @@ public class PassengerService : IPassengerService
 
     public Passenger CreatePassenger(Passenger passenger)
     {
-        var isValid = ValidationService.Validation(passenger,x => _passengers.Add((Passenger)x));
-        if (isValid)
-        {
-            return passenger;
-        }
-        return null;
+        var isValid = ValidationService.Validation(passenger,x => _passengers.Add(x));
+        return isValid ? passenger : null;
     }
 
     public IEnumerable<Passenger> GetAllPassengers()
@@ -43,7 +39,7 @@ public class PassengerService : IPassengerService
 
     public void DeleteBooking(Guid PassengerId,Booking booking)
     {
-        var passenger = _passengers.FirstOrDefault(p => p.PassengerId == PassengerId);
+        var passenger = _passengers.FirstOrDefault(p => p.Id == PassengerId);
         passenger.Bookings.Remove(booking);
     }
 }
