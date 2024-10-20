@@ -22,6 +22,7 @@ public class Booking
     public DateTime BookingDate { get; set; }
     
     [Required]
+    [Range(0, int.MaxValue)]
     public decimal Price { get; set; }
 
     public Booking(Guid flightId, Guid passengerId, FlightClass flightClass, DateTime bookingDate, decimal price)
