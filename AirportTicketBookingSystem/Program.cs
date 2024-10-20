@@ -13,7 +13,7 @@ class Program
         var passengers = new List<Passenger>();
         var flightService = new FlightService(flights);
         var bookingService = new BookingService(bookings);
-        var bookingSearchService = new BookingSearchService(flights,bookings);
+        var bookingSearchService = new BookingSearchService(flights,bookings,flightService);
         var passengerService = new PassengerService(passengers);
         
         var menuHandler = new MenuHandler(bookingService, bookingSearchService, flightService,passengerService);

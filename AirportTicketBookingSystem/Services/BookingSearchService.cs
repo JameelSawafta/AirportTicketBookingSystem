@@ -9,11 +9,13 @@ public class BookingSearchService : IBookingSearchService
 
     private readonly List<Flight> _flights;
     private readonly List<Booking> _bookings;
+    private readonly IFlightService _flightService;
 
-    public BookingSearchService(List<Flight> flights, List<Booking> bookings)
+    public BookingSearchService(List<Flight> flights, List<Booking> bookings, IFlightService flightService)
     {
         _flights = flights;
         _bookings = bookings;
+        _flightService = flightService;
     }
 
     public IEnumerable<Booking> GetSearchBookings(Sieve sieve)
@@ -23,7 +25,6 @@ public class BookingSearchService : IBookingSearchService
         if (sieve.MaxPrice.HasValue || !string.IsNullOrEmpty(sieve.DepartureCountry) || !string.IsNullOrEmpty(sieve.DestinationCountry) 
             || sieve.DepartureDate.HasValue || !string.IsNullOrEmpty(sieve.DepartureAirport) || !string.IsNullOrEmpty(sieve.DestinationAirport))
         {
-            var _flightService = new FlightService(_flights);
             var matchingFlights = _flightService.GetSearchFlights(sieve);
             var matchingFlightIds = matchingFlights.Select(flight => flight.FlightId);
             query = query.Where(booking => matchingFlightIds.Contains(booking.FlightId));
